@@ -1,5 +1,6 @@
 /*
 first occurence in a sorted array.
+given a sorted array which may contain duplicate entries find the first occurence of the given target.
 Time complexity : O(log n) [base is 2]
 */
 
