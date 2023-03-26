@@ -1,18 +1,21 @@
 class Solution {
 public:
 
-    bool isSafe(vector<vector<char>> &board ,int k ,int i , int j){
-        for(int col = 0 ; col < 9 ; col++){
-            if(board[i][col] == 'k') return false;
-        }
+    bool isSafe(vector<vector<char>> &board ,int value,int row , int col){
+        int n = board.size();
 
-        for(int row =0 ; row < 9 ; row++){
-            if(board[j][row] == 'k') return false;
-        }
+        for(int i=0; i<n; i++) {
+            //row check
+            if(board[row][i] == value)
+                return false;
+            
+            //col check
+            if(board[i][col] == value) 
+                return false;
 
-        for(int ind =0 ;ind < 9 ;ind++){
-            if(board[3*(i/3) + ind/3][3*(j/3) + ind%3] == 'k')
-            return false;
+            //3*3 box check
+            if(board[3*(row/3)+(i/3)][3*(col/3)+(i%3)] == value) 
+                return false;
         }
 
         return true;
@@ -22,24 +25,30 @@ public:
 
         for(int i =0 ; i<n ;i++){
             for(int j=0 ;j<n;j++){
+                //check for empty cell
                 if(board[i][j]=='.'){
-                    for(char k = '1' ;  k < '9' ; k++){
+                    // try to fill a value from 1 to 9
+                    for(char k = '1' ;  k <= '9' ; k++){
+                        // check if placement is safe or not.
                         if(isSafe(board,k,i,j)){
                             board[i][j] = k;
+                            bool remainingSolution = solve(board,n);
+                            if(remainingSolution){
+                                return true;
+                            }
+                            else{
+                                board[i][j] = '.';
+                            }
                         }
-                        else{
-                            return false;
-                        }
-
-                        return false;
                     }
+                    return false;
                 }
             }
         }
         return true;
     }
     void solveSudoku(vector<vector<char>>& board) {
-        int n = 9;
+         int n = board.size();
          bool solver = solve(board,n);
         
     }
