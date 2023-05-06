@@ -22,15 +22,16 @@ Node* buildTree() {
 
     int data;
     cin >> data;
+    
     if (data == -1) {
         return NULL;
     }
     
     Node* temp = new Node(data);
-    cout << "insert node on left :" << endl;
+    cout << "insert node on left of " << data << " " << endl;
     temp->left = buildTree();
 
-    cout << "insert node on right :" << endl;
+    cout << "insert node on right of "<< data << " " << endl;
     temp->right = buildTree();
 
     
@@ -38,9 +39,7 @@ Node* buildTree() {
 
 int main()
 {
-    Node* root = new Node(0);
-    root = buildTree();
-
+    Node* root = buildTree();
     return 0;
 
 }
