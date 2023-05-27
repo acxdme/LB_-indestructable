@@ -62,7 +62,7 @@ public:
             }
         }
 
-        //check for the remaining node in max heap and return ans accordingly
+        //if max heap is not empty ,check for the top node and return ans accordingly
         if(!pq.empty()){
             node* tp = pq.top();
             if(tp->count ==1) ans +=tp->c;
