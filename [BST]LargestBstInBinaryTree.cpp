@@ -82,3 +82,31 @@ int main()
 
     return 0;
 }
+//-----------------------------------------
+//updated function 
+NodeData* findLargestBst(Node* root, int& maximumSize) {
+    if (root == NULL) {
+        NodeData* temp = new NodeData(0, INT_MAX, INT_MIN, true);
+        return temp;
+    }
+    if (root->left == NULL && root->right == NULL) {
+        NodeData* temp = new NodeData(1, root->data, root->data, true);
+        return temp;
+    }
+
+    NodeData* left = findLargestBst(root->left, maximumSize);
+    NodeData* right = findLargestBst(root->right, maximumSize);
+
+    NodeData* current = NULL;
+    if (root->data > left->mx && root->data < right->mn && left->valid && right->valid) {
+        maximumSize = max(maximumSize, 1 + left->size + right->size);
+        current = new NodeData(1 + left->size + right->size, min(root->data,left->mn), max(root->data,right->mx), true);
+    }
+    else {
+        current = new NodeData(1,  min(root->data,left->mn), max(root->data,right->mx), false);
+
+    }
+
+    return current;
+
+}
