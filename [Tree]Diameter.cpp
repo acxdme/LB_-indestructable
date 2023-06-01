@@ -26,3 +26,45 @@ public:
         return ans;
     }
 };
+
+//Method-2
+/*
+Time complexity : O(N)
+Space complexity :O(N)
+*/
+/* Tree node structure  used in the program
+
+struct Node
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+
+    Node(int x){
+        data = x;
+        left = right = NULL;
+    }
+}; */
+
+class Solution {
+  public:
+    
+    int solve(Node* root, int& mx){
+        if(root == NULL) return 0;
+        
+        int l = solve(root->left,mx);
+        int r = solve(root->right,mx);
+        mx = max(mx,l + r + 1 );
+        
+        return  1 + max(l,r);
+    }
+    // Function to return the diameter of a Binary Tree.
+    int diameter(Node* root) {
+        
+        int mx = 0;
+        int temp = solve(root,mx);
+        
+        return mx;
+        
+    }
+};
