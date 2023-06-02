@@ -34,3 +34,33 @@ public:
          
     }
 };
+------------
+    //Method-2
+    //Fast method to find if tree is balanced or not
+    
+  /*
+    Time complexity : O(N)
+ */
+class Solution {
+public:
+    pair<int,bool> solve(TreeNode* root){
+        if( root == NULL) return make_pair(0,true);
+
+
+        pair<int,bool> left = solve(root->left);
+        left.first += 1;
+
+        pair<int,bool> right = solve(root->right);
+        right.first += 1;
+
+
+        return make_pair(max(left.first,right.first), left.second && right.second && abs(left.first - right.first) <= 1 );
+    }
+    bool isBalanced(TreeNode* root) {
+        
+        pair<int,bool> ans ;
+        ans = solve(root);
+
+        return ans.second;
+    }
+};
