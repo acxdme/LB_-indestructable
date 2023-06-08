@@ -1,5 +1,5 @@
 /*
-  Time complexity : O(N)
+  Time complexity : O(M*N), har index pe rakh ke compare kar rahe hai bhai.
   Space complexity : O(N)
 */
 
