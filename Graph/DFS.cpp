@@ -62,3 +62,35 @@ int main() {
 
     return 0;
 }
+
+
+---------------------------------------------------------------------
+
+// method-1 VS method-2 (check in a real example)
+
+    //method-1
+   void dfs(vector<int>& visited ,int src){
+       
+       cout<< src <<" ";
+       for(auto nbr : adjList[src]){
+           if(!visited[nbr]){
+               visited[nbr] = true;
+               dfs(visited,nbr);
+           }
+       }
+   }
+
+ // method-2
+
+   void dfs(vector<int>& visited ,int src){
+       
+       cout<< src <<" ";
+       visited[src] = true; // this line
+       for(auto nbr : adjList[src]){
+           if(!visited[nbr]){
+               
+               dfs(visited,nbr);
+           }
+       }
+   }
+
