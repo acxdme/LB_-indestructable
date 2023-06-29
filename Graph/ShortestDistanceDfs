@@ -1,0 +1,115 @@
+#include <iostream>
+#include <unordered_map>
+#include <list>
+#include <stack>
+#include<vector>
+#include<limits.h>
+
+using  namespace std;
+
+class Graph {
+private:
+    unordered_map<int, list<pair<int,int>>> adjList;
+public:
+    void addEdge(int u, int v, int w , int direction) {
+        adjList[u].push_back({ v,w });
+        if (direction == 0) {
+            adjList[v].push_back({ u,w });
+        }
+    }
+
+    void printAdjList() {
+        for (auto& it : adjList) {
+            cout << it.first << "->";
+            for (auto& nbr : it.second) {
+                cout << "{" << nbr.first << "," << nbr.second << "}" << ",";
+            }cout << endl;
+        }
+    }
+
+    void topoDfs(int src, unordered_map<int, int>& visited, stack<int>& topoSort) {
+        visited[src] = 1;
+
+
+        for (auto nbr : adjList[src]) {
+            if (!visited[nbr.first]) {
+                topoDfs(nbr.first, visited, topoSort);
+            }
+        }
+
+        cout << "pushing element :" << src << endl;
+        topoSort.push(src);
+
+        return;
+    }
+
+    void findShortestPathUsingDfs(stack<int>& topoSort,vector<int>& distance) {
+
+        while (!topoSort.empty()) {
+            int top = topoSort.top();
+            topoSort.pop();
+
+            for (auto it : adjList[top]) {
+                if (distance[top] != INT_MAX && distance[top] + it.second < distance[it.first]) {
+                    distance[it.first] = distance[top] + it.second;
+                    
+                }
+            }
+        }
+    }
+};
+
+int main()
+{
+    Graph g;
+    //g.addEdge(0, 1, 1);
+    //g.addEdge(1, 2, 1);
+    //g.addEdge(2, 3, 1);
+
+    g.addEdge(0, 1,1,1);
+    g.addEdge(0, 2,3,1 );
+    g.addEdge(0, 3,2,1);
+
+    g.addEdge(1, 4, 2, 1);
+    g.addEdge(2, 5, 5, 1);
+    g.addEdge(3, 6, 6, 1);
+
+    g.addEdge(4, 7, 4, 1);
+    g.addEdge(5, 8, 3, 1);
+    g.addEdge(6, 8, 1, 1);
+
+    g.addEdge(7, 8, 1, 1);
+
+
+    g.printAdjList();
+
+    int nodes = 9;
+
+    // Directed acyclic graph is
+    // a must to find the topoSort order
+
+    stack<int> topoSort;
+    unordered_map<int, int> visited;
+
+    for (int i = 0;i < nodes; i++) {
+        if (!visited[i]) {
+            g.topoDfs(i, visited, topoSort);
+        }
+    }
+
+   // shortest path using dfs
+    // step-1) find the toposorted order
+    // step-2) update the distance array
+
+    vector<int>distance(nodes, INT_MAX);
+    int src = 0;
+    int dest = 8;
+    distance[src] = 0;
+    g.findShortestPathUsingDfs(topoSort,distance);
+
+    for (auto it : distance) {
+        cout << it << " ";
+    }cout << endl;
+
+    return 0;
+}
