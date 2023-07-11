@@ -1,6 +1,13 @@
 // Floyd Warshall mssp algo
 // gfg , TC : O(N^3)
 
+/*
+Detecting negative cycle :
+Distance of any node from itself is always zero.
+But in some cases, as in this example, when we traverse further from 4 to 1, the distance comes out to be -2, i.e. distance of 1 from 1 will become -2.
+This is our catch, we just have to check the nodes distance from itself and if it comes out to be negative, we will detect the required negative cycle.
+*/
+
 	void shortest_distance(vector<vector<int>>&matrix){
 	    int n = matrix.size();
     
