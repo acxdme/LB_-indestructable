@@ -99,3 +99,52 @@ public:
 
     }
 };
+
+-----------------------------------------------------------------------------------------------
+    //third try correct code aur my code found no difference
+    // correct code :
+    class Solution {
+public:
+    int minimumEffortPath(vector<vector<int>>& heights) {
+    
+        int r = heights.size();
+        int c = heights[0].size();
+        vector<vector<int>> distance(r,vector<int>(c,INT_MAX));
+        priority_queue< pair<int,pair<int,int>> , vector< pair<int,pair<int,int>> >,greater< pair<int,pair<int,int>> > >pq;
+        pq.push({0,{0,0}});
+        distance[0][0] = 0;
+
+        while(!pq.empty()){
+            auto it = pq.top();
+            pq.pop();
+            int curDiff = it.first;
+            int curX = it.second.first;
+            int curY = it.second.second;
+            // cout<<curX<<" "<<curY <<endl;
+
+            if(curX == r-1 && curY == c-1){
+                return distance[curX][curY];
+            }
+
+            int dx[] = {-1,0,1,0};
+            int dy[] = {0,1,0,-1};
+            for(int i =0 ; i<4 ;i++){
+                int newX = curX + dx[i];
+                int newY = curY + dy[i];
+                if(newX >=0 && newX < r && newY >= 0 && newY < c){
+                    int newDiff = abs(heights[newX][newY] - heights[curX][curY]);
+                    int mxDiff = max(newDiff,curDiff);
+                    if( mxDiff < distance[newX][newY]  );
+                    {
+                    //  cout<< newX <<"-"<<newY <<" : "; 
+                      distance[newX][newY] = mxDiff;
+                      pq.push({mxDiff,{newX,newY}});
+                    }
+                }
+            }
+        }
+
+        return 0;
+
+    }
+};
