@@ -148,3 +148,5 @@ public:
 
     }
 };
+
+// Discord pe help leke pata chala ki ; add tha if statement line mei, maro mujhe maro
