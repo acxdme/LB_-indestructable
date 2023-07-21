@@ -38,3 +38,5 @@ class Solution
     }
         
 };
+
+// reason for TLE also understood , because i can just check ratio on the fly , no need to store it.
