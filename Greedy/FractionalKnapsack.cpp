@@ -74,6 +74,38 @@ class Solution
                 W = 0;
             }
         }
+
+        // wow i suprised myself  below is the accepted code.
+
+        class Solution
+{
+    public:
+    //Function to get the maximum total value in the knapsack.
+    static bool  cmp( Item &a  , Item &b){
+        return (1.0)*a.value / a.weight  > (1.0)*b.value / b.weight;
+    }
+    double fractionalKnapsack(int W, Item rarr[], int n)
+    {
+        double ans = 0.0;
+
+        
+        sort(rarr,rarr+n,cmp);
+        
+        for(int i  = 0 ;i< n; i++){
+            if(W == 0) break;
+            if(rarr[i].weight <= W) {
+                ans += rarr[i].value;
+                W = W - rarr[i].weight;
+            }
+            else{
+                ans += W * ((1.0)* rarr[i].value/rarr[i].weight);
+                W = 0;
+            }
+        }
+        return ans;
+    }
+        
+};
         return ans;
     }
         
