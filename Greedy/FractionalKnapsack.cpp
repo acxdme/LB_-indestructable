@@ -39,4 +39,42 @@ class Solution
         
 };
 
-// reason for TLE also understood , because i can just check ratio on the fly , no need to store it.
+// reason for TLE also understood , because i can just check ratio on the fly , no need to store it. 
+// but this also is giving TLE why?
+
+class Solution
+{
+    public:
+    //Function to get the maximum total value in the knapsack.
+    static bool  cmp(vector<double>&a  ,vector<double>&b){
+        return (1.0)*a[0] / a[1]  > (1.0)*b[0] / b[1];
+    }
+    double fractionalKnapsack(int W, Item arr[], int n)
+    {
+        double ans = 0.0;
+        vector<vector<double>>  rarr;
+        for(int i = 0 ; i<n ;i++){
+            vector<double> temp;
+            temp.push_back(arr[i].value);
+            temp.push_back(arr[i].weight);
+             rarr.push_back(temp);
+             
+        }
+        
+        sort(rarr.begin(),rarr.end(),cmp);
+        
+        for(int i  = 0 ;i< n; i++){
+            if(W == 0) break;
+            if(rarr[i][1] <= W) {
+                ans += rarr[i][0];
+                W = W - rarr[i][1];
+            }
+            else{
+                ans += W * ((1.0)* rarr[i][0]/rarr[i][1]);
+                W = 0;
+            }
+        }
+        return ans;
+    }
+        
+};
