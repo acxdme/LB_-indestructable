@@ -18,3 +18,31 @@ In practice, the difference in speed between `n & 1` and `n % 2` might not be no
 However, when you are dealing with performance-critical code, and you need to perform this check inside tight loops or with a high frequency, using `n & 1` can be a micro-optimization that offers a slight performance improvement over `n % 2`.
 Keep in mind that modern compilers are often smart enough to optimize these operations, so it's essential to measure the performance gain in your specific context before deciding to use one over the other.
 Code readability and maintainability should also be considered when making such optimizations.
+
+
+
+
+
+/// why modulus is an costly affair
+The term "heavy operation" can have different meanings depending on the context, but when it comes to computational complexity and performance considerations, the modulus operation (often denoted by the % symbol) can be relatively expensive compared to other basic arithmetic operations like addition or multiplication. Here's why:
+
+1. Division operation: The modulus operation is essentially a division operation with a remainder.
+For example, when computing `a % b`, the CPU needs to perform the division of `a` by `b` to find the quotient and then calculate the remainder.
+Division is generally a more complex operation than addition or multiplication, involving multiple steps and iterative processes.
+
+2. Integer division: Modulus with integers (e.g., `integers % integer`) is generally more expensive than floating-point modulus (e.g., `float % float`).
+This is because integer division requires additional considerations to handle rounding and truncation of results.
+
+3. Pipeline stalls: In modern CPUs, some instructions take longer to execute than others.
+When the modulus operation is executed, it may cause pipeline stalls, meaning that subsequent instructions must wait until the modulus operation is completed, leading to potential slowdowns.
+
+4. Branch prediction: In some programming languages, the modulus operation can be implemented using conditional branches.
+Branching introduces unpredictability into the code, and if the branch prediction is not efficient, it can lead to performance penalties.
+
+5. Hardware implementation: Modulus operations are not directly supported by all hardware architectures, so they may be implemented in microcode or require multiple instructions, further contributing to increased execution time.
+
+However, it's essential to note that the concept of a "heavy operation" is relative to the specific hardware and the context in which it is being used.
+In many cases, the performance impact of a single modulus operation might be negligible, especially on modern hardware with advanced optimizations.
+
+In most real-world scenarios, the performance difference between modulus and other arithmetic operations won't be significant enough to cause concerns unless you're performing an enormous number of such operations in tight loops or in performance-critical applications.
+As with any performance optimization, it's best to profile your code to identify the actual bottlenecks before optimizing specific operations.
