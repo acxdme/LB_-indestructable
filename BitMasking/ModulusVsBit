@@ -1,0 +1,20 @@
+The reason that `n & 1` is often considered faster than `n % 2` for determining whether a number is odd or even is primarily due to the way these operations are implemented at the hardware level.
+
+1. Bitwise AND (`n & 1`):
+The bitwise AND operation `n & 1` directly checks the least significant bit (LSB) of the binary representation of the number `n`.
+If the LSB is 1, then the number is odd; otherwise, it's even. Since this operation involves only checking a single bit, it is very fast and efficient.
+Modern processors can perform bitwise operations quickly because they work at the hardware level directly with bits.
+
+2. Modulus (`n % 2`):
+The modulus operation `n % 2` is more complex compared to the bitwise AND.
+It involves division, which is generally a more time-consuming operation, as explained in the previous answer.
+While many modern processors have dedicated instructions for division, it still requires multiple CPU cycles to complete compared to simple bitwise operations.
+
+Furthermore, the `%` operator is more general-purpose, as it can be used to find the remainder of any two numbers.
+On the other hand, `&` is specifically designed for bitwise operations and can only be used to check a single bit.
+This specialization allows the processor to optimize the `&` operation further for such cases.
+
+In practice, the difference in speed between `n & 1` and `n % 2` might not be noticeable in most scenarios.
+However, when you are dealing with performance-critical code, and you need to perform this check inside tight loops or with a high frequency, using `n & 1` can be a micro-optimization that offers a slight performance improvement over `n % 2`.
+Keep in mind that modern compilers are often smart enough to optimize these operations, so it's essential to measure the performance gain in your specific context before deciding to use one over the other.
+Code readability and maintainability should also be considered when making such optimizations.
