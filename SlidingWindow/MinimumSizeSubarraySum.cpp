@@ -37,3 +37,40 @@ public:
         return minLength;
     }
 };
+
+-----------------------------------------------------------------
+
+  // some code refactoring for better readability
+
+  class Solution {
+public:
+    int minSubArrayLen(int target, vector<int>& nums) {
+
+        int start = 0;
+        int end = 0;
+        int size = nums.size();
+        int minLength = INT_MAX;
+        int sum  = 0;
+
+        while( end < size){
+            sum += nums[end];
+
+            if(sum >= target){
+
+                while( sum >= target){
+                    minLength = min(minLength , end - start +1);
+                    sum -= nums[start];
+                    start++;
+                }
+
+            }
+            end++;
+        }
+
+        if(minLength == INT_MAX){
+            return 0;
+        }
+
+        return minLength;
+    }
+};
