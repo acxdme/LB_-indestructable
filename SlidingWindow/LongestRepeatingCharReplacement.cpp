@@ -29,3 +29,25 @@ public:
     }
 
 };
+//------------------------------------------------------------------------------------------
+//Kafi non-intutive approach
+// dry-run , marked as must revise.
+int characterReplacement(string s, int k) {
+        if(s.length() == 0) return 0;
+        if(s.length() <= k) return s.length();
+        unordered_map<char, int> m;
+        int res = 0; int l = 0;
+        int maxCount = 0;
+
+        for(int i = 0; i < s.length(); i++){
+            m[s[i]] ++;
+            maxCount = max(maxCount, m[s[i]]);
+            while(i - l + 1 - k > maxCount){
+                m[s[l]] --;
+                l++;
+            }
+            res = max(res, i-l+1);
+
+        }
+        return res;
+    }
