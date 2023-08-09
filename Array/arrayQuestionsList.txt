@@ -4,3 +4,5 @@
 02) find Union of two arrays.
 03) Sort 0's and 1's.
 04) Sort colors.
+05) Rotate Array ( d times to left)
+06) Majority Element (n/2 th element)
