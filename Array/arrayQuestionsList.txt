@@ -6,3 +6,4 @@
 04) Sort colors.
 05) Rotate Array ( d times to left)
 06) Majority Element (n/2 th element)
+07) Buy & Sell Stock -1
