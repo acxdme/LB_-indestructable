@@ -7,3 +7,5 @@
 05) Rotate Array ( d times to left)
 06) Majority Element (n/2 th element)
 07) Buy & Sell Stock -1
+08) Segregate negatives
+09) Find duplicate.
