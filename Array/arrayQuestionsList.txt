@@ -9,3 +9,5 @@
 07) Buy & Sell Stock -1
 08) Segregate negatives
 09) Find duplicate.
+10) Missing number
+11) First Repeating element.
