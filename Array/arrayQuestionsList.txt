@@ -12,3 +12,4 @@
 10) Missing number
 11) First Repeating element.
 12) Common Elements in 3 sorted arrays.
+13) Factorial of large number.
