@@ -13,3 +13,5 @@
 11) First Repeating element.
 12) Common Elements in 3 sorted arrays.
 13) Factorial of large number.
+14) Wave matrix.
+15) Spiral Matrix.
