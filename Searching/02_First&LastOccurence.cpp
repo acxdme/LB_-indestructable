@@ -15,3 +15,76 @@
         
         return {firstOcc,lastOcc};
     }
+
+//--------------------------------------------
+// Using self-created functions
+
+   long int findFirst(vector<long long>& v,int n , long long target){
+        
+        int start = 0;
+        int end = n-1;
+        int mid = start + (end - start)/2;
+        int firstIndex = -1;
+        
+        while(start <= end){
+            if(v[mid] == target)
+            {
+              firstIndex = mid;
+              end = mid -1;
+              
+            }
+            else if( v[mid] > target){
+              end = mid -1;
+            }
+            else{
+               // v[mid] < target 
+               start = mid +1;
+            }
+            
+            mid = start + (end -start)/2;
+        }
+        
+        return firstIndex;
+        
+    }
+    
+    long int findLast(vector<long long>& v,int n , long long target){
+        
+        int start = 0;
+        int end = n-1;
+        int mid = start + (end - start)/2;
+        int lastIndex = -1;
+        
+        while(start <= end){
+            if(v[mid] == target)
+            {
+              lastIndex = mid;
+              start = mid +1;
+              
+            }
+            else if( v[mid] > target){
+              end = mid -1;
+            }
+            else{
+               // v[mid] < target 
+               start = mid +1;
+            }
+            
+            mid = start + (end -start)/2;
+        }
+        
+        return lastIndex;
+        
+    }
+    pair<long,long> indexes(vector<long long> v, long long x)
+    {
+        long int firstOcc = -1;
+        long int lastOcc = -1;
+        
+        int n = v.size();
+        firstOcc = findFirst(v,n,x);
+        lastOcc =  findLast(v,n,x);
+     
+        
+        return {firstOcc,lastOcc};
+    }
