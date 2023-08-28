@@ -30,3 +30,29 @@ class Solution{
        return mid;
     }
 };
+
+// logic hi improper tha , upar wale attempt mei
+
+    long long int floorSqrt(long long int x) 
+    {
+        long long int start = 0 ;
+        long long int end = x;
+        long long int mid = start + (end -start)/2;
+        long long int ans = -1;
+        while(start <= end){
+            if(mid * mid  == x){
+                ans = mid ;
+                break;
+            }
+            else if(mid * mid > x){
+                end = mid -1;
+            }
+            else{
+                ans = mid;
+                start = mid + 1;
+            }
+            mid = start + (end -start)/2;
+        }
+        
+        return ans;
+    }
