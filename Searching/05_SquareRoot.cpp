@@ -52,6 +52,9 @@ class Solution{
                 start = mid + 1;
             }
             mid = start + (end -start)/2;
+
+
+// for precision , run a loop of it and add steps in that loop , totally brute way to calculate the precision decimals.
         }
         
         return ans;
