@@ -17,3 +17,4 @@
 15) Spiral Matrix.
 16) Transpose of a Matrix
 17) rotate matrix by 90°
+18) Median in a row sorted matrix
