@@ -10,3 +10,5 @@ List of Binary Search Questions
 9) Find odd occuring element.
 10) K-diff pairs in array
 11) K closest points in an array.
+12) Unbounded binary search
+13) Book allocation problem
