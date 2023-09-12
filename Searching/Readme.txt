@@ -12,3 +12,4 @@ List of Binary Search Questions
 11) K closest points in an array.
 12) Unbounded binary search
 13) Book allocation problem
+14) Painter's Partition problem
