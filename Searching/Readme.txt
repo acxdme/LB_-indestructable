@@ -14,3 +14,5 @@ List of Binary Search Questions
 13) Book allocation problem
 14) Painter's Partition problem
 15) Aggressive Cows
+16) Eko Spoj
+17) Prata Spoj
