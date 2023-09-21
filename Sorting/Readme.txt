@@ -2,3 +2,4 @@
 
 01) Selection sort
 02) Bubble sort
+03) Insertion sort
