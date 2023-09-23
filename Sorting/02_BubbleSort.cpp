@@ -5,9 +5,8 @@
 
     void bubbleSort(int arr[], int n)
     {   
-        int isSorted = true;
         for(int round = 1; round < n; round++){
-            
+         int isSorted = true;
             for(int i =0 ; i < n- round ;i++){
                 if(arr[i] > arr[i+1]){
                     isSorted = false;
