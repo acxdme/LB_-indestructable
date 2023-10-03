@@ -7,4 +7,7 @@
 06) Valid anagrams
 07) Roman Numeral to integer
 08) Maximum number of words in a sentence
-09) Palindromic Substrings.
+09) Palindromic Substrings
+10) Reverse only letters
+11) longest common prefix
+12) Reverse vowels in string
