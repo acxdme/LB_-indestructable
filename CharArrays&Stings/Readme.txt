@@ -11,3 +11,5 @@
 10) Reverse only letters
 11) longest common prefix
 12) Reverse vowels in string
+13) Group anagrams
+14) Longest Palindromic subsequence
