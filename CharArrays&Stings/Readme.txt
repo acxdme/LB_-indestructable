@@ -13,3 +13,7 @@
 12) Reverse vowels in string
 13) Group anagrams
 14) Longest Palindromic subsequence
+15) atoi
+16) String Compression
+17) ZigZag Conversion
+18) Largest Number
