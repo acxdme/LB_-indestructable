@@ -76,3 +76,41 @@ With memoization, you significantly reduce the time complexity to O(n) as you ca
 In summary, calculating the Fibonacci series using a recursive approach in C++ results in exponential time complexity and linear space complexity due to redundant calculations.
 Memoization can be used to optimize the time complexity and make the algorithm more efficient by storing previously computed Fibonacci values.
 Understanding time and space complexity is crucial for designing efficient algorithms and optimizing them for real-world applications.
+
+
+----------------------------------------------------------------------------
+//more depth for time and depth complexity topic
+
+Certainly, let's derive the time and space complexities of the Fibonacci series calculated using a recursive approach.
+
+**Time Complexity Derivation:**
+
+To derive the time complexity of the recursive Fibonacci algorithm, let's consider the number of function calls made for a given input 'n'. 
+
+1. When you call `fibonacci(n)`, it makes two more calls: `fibonacci(n-1)` and `fibonacci(n-2)`.
+2. Each of those calls, in turn, makes two more calls. This branching behavior continues until we reach the base cases (`fibonacci(0)` or `fibonacci(1)`).
+
+Now, let's represent the number of function calls made at each level of recursion as a tree:
+
+```
+                   fibonacci(n)
+               /                \
+    fibonacci(n-1)        fibonacci(n-2)
+       /         \           /         \
+fib(n-2)  fib(n-3)    fib(n-3)    fib(n-4)
+  ...       ...         ...        ...
+```
+
+As you can see, at each level, the number of function calls doubles. This branching factor continues for a total of 'n' levels until we reach the base cases. In other words, the tree has a depth of 'n'. 
+
+So, the total number of function calls made for input 'n' is 2^n. Therefore, the time complexity of the recursive Fibonacci algorithm is O(2^n).
+
+**Space Complexity Derivation:**
+
+The space complexity of a recursive algorithm is primarily determined by the number of function calls and the memory required for each call. 
+
+In the case of the Fibonacci algorithm, as you go deeper into the recursion, more function calls are added to the call stack. At any given time, there are at most 'n' function calls on the stack for `fibonacci(n)`.
+
+The space required for each function call consists of local variables and return addresses, but this space is constant and doesn't depend on 'n'. Therefore, the space complexity of the recursive Fibonacci algorithm is linear, O(n).
+
+However, as mentioned earlier, when you use memoization to store previously computed Fibonacci values in an array, the space complexity remains O(n) because you are storing values for each value from 0 to 'n' in the array.
