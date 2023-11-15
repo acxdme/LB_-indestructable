@@ -3,3 +3,4 @@
 03) Print Subsequences
 04) counting numbers
 05) Coin change
+06) Rod cutting
