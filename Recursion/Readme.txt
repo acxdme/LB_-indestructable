@@ -6,3 +6,4 @@
 06) Rod cutting
 07) Maximum sum of non-adjacent elements
 08) house robber -1
+09) counting numbers in reverse
