@@ -8,3 +8,5 @@
 08) house robber -1
 09) counting numbers in reverse
 10) factorial & fibonnachi 
+11) 2 power raise
+
