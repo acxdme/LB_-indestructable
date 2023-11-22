@@ -9,4 +9,4 @@
 09) counting numbers in reverse
 10) factorial & fibonnachi 
 11) 2 power raise
-
+12) Palindrome check
