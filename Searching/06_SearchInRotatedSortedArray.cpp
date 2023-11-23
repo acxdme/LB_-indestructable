@@ -4,7 +4,7 @@
 
 
 //method-2
-
+//comparing with ends solution
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
