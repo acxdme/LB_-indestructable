@@ -10,3 +10,7 @@
 10) factorial & fibonnachi 
 11) 2 power raise
 12) Palindrome check
+13) Last Occurence of a char in array
+14) Remove all occureences of a subsequence
+15) Print all subarrays
+16) Best time to buy and sell stock
