@@ -15,3 +15,4 @@
 15) Print all subarrays
 16) Best time to buy and sell stock
 17)Integer to english words
+18) Wild card pattern matching
