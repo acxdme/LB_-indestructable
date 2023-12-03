@@ -23,3 +23,7 @@ public:
         return mxProfit;
     }
 };
+
+// interation-approch
+// tc : O(N)
+// sc : O(1)
