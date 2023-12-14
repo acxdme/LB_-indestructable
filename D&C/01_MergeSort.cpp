@@ -81,3 +81,4 @@ int main() {
 }
 
 // inplace merge-sort
+// sc : O (1)
