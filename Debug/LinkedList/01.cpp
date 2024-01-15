@@ -46,3 +46,20 @@ int main() {
   print();
   return 0;
 }
+---------------------------------------------------------------------------------------
+  // alternative approach (officail answer)
+
+  void insert(int x) {
+  Node* temp = new Node;
+  temp->data = x;
+  temp->next = NULL;
+  if (head == NULL) {
+    head = temp;
+  } else {
+    Node* current = head;
+    while (current->next != NULL) {
+      current = current->next;
+    }
+    current->next = temp;
+  }
+}
