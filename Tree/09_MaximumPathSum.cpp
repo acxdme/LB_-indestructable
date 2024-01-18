@@ -2,18 +2,6 @@
 // tc - O(N)
 // sc - O(h) , h :  height of the binary tree
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
- * right(right) {}
- * };
- */
 class Solution {
 public:
     int getMaxPathSum(TreeNode* root, int sum, int& maxSum) {
@@ -22,20 +10,20 @@ public:
             return 0;
         }
 
-        // left sum
+        // left sub-tree sum
         int leftSum = getMaxPathSum(root->left, sum, maxSum);
-        // right sum
+        // right sub-tree sum
         int rightSum = getMaxPathSum(root->right, sum, maxSum);
 
-        // current sum including root->val
+        // current sum value, i.e max of node val , node val + max from left or right
         int currSum = max(root->val, root->val + max(leftSum, rightSum));
 
-        // currMax
+        // current maximum value
         int currMax = max(currSum, root->val + leftSum + rightSum);
         // update maxSum
         maxSum = max(maxSum, currMax);
 
-        // pass the max subTree sum + node->val to return
+        // pass the current sum
         return currSum;
     }
 
