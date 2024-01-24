@@ -1,4 +1,4 @@
-// code for top view
+// code for bottom view
 #include <iostream>
 #include<vector>
 #include<queue>
@@ -33,12 +33,11 @@ void findBottomView(Node* root)
 			Q.pop();
 			Node* node = it.first;
 			int col = it.second;
-      if(mp.find(col) == mp.end()){ // update only if there is no entry for that column in the map mp
 			 mp[col] = node->data;
-      }
-      if(node->left != NULL) // validation missing
+
+     			 if(node->left != NULL) // validation missing
 			Q.push({node->left, col-1});
-      if(node->right != NULL) // validation missing
+    		         if(node->right != NULL) // validation missing
 			Q.push({node->right, col+1});
 		}
 		for(auto x:mp){
