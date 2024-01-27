@@ -49,3 +49,26 @@ int main() {
 
   return 0;
 }
+
+
+//--------------------------------------------------------------------------------------------------
+
+//reset karne ki bhi jaroot nahi hai , bas return optimize kar lo
+// provided solution :
+
+void secondLargestUtil(Node *root, int &c) {
+    if (root == NULL || c >= 2)
+        return;
+    secondLargestUtil(root->right, c);
+    c++;
+    if (c == 2) {
+        cout << root->key << endl; // Print 2nd Largest Element
+        return;
+    }
+    secondLargestUtil(root->left, c);
+}
+
+void secondLargest(Node *root) {
+    int c = 0;
+    secondLargestUtil(root, c);
+}
