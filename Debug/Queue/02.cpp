@@ -48,3 +48,32 @@ int main() {
   
   return 0;
 }
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+//official answer
+
+int firstUniqChar(string s) {
+        vector<int> c(26,0);
+        queue<char> q;
+       
+        for(auto i:s){
+            c[i-'a']++;
+            q.push(i);
+        }
+        
+        int idx=0;
+      
+        while(!q.empty()){
+            auto elem=q.front();
+            q.pop();
+            
+            if(c[elem-'a']==1){
+               return idx; // better return if found
+            }else{
+                idx++;
+            }
+        }
+        return -1; // return -1 if not found
+    }
