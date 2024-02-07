@@ -1,4 +1,4 @@
-// reverseStack , fun approach
+// reverseStack, fun approach
 
 void reverseStack(stack<int> &input, stack<int> &extra) {
 	if(input.empty()){ // base-case
