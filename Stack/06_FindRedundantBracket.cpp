@@ -1,6 +1,6 @@
 // gfg - https://www.geeksforgeeks.org/problems/expression-contains-redundant-bracket-or-not/1
-// tc : 
-// sc : 
+// tc :  O(N) , time for traversal 
+// sc :  O(N) , auxillary space for stack taken
 
 class Solution {
   public:
