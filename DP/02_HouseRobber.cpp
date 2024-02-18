@@ -1,4 +1,4 @@
-
+//lc -198
 class Solution {
 public:
 
@@ -16,7 +16,7 @@ public:
 
     int solveMem(vector<int>& nums,int &size ,int i,vector<int> &dp){
         if(i >= size){ return 0 ;}
-        if(dp[i] != -1 ) return dp[i];
+        if(dp[i] != -1 ) return dp[i]; // nums can be {0,0,0,0} , but they can't be -ve
 
         //include
         int inc =  nums[i] + solveRec(nums,size,i +2);
@@ -31,7 +31,7 @@ public:
     int solveTab(vector<int>& nums,int &size){
         // n -> 0
 
-        vector<int>dp(size+1, INT_MIN);
+        vector<int>dp(size+1, INT_MIN); // -1 can be also used
         dp[size] = 0;
 
         for(int i = size - 1 ; i >=0 ; i--){
