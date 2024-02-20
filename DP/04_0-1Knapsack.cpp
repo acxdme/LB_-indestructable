@@ -3,6 +3,7 @@
 class Solution
 {
     public:
+    
     int MaximumTotalValueRecursion(int wt[] , int val[] ,int C,int index ){
         
         if(index == 0){
@@ -13,6 +14,7 @@ class Solution
                 return 0;
             }
         }
+        
         
         //include 
         int inc = 0;
@@ -57,6 +59,30 @@ class Solution
         return dp[index][C];
     }
     
+    int MaximumTotalValueTabulation(int weight[] , int value[] ,int maxWeight,int index ){
+        
+        vector<vector<int>>dp(index + 2 , vector<int>(maxWeight+2 ,0));
+        
+        //base case
+        for(int i= 1 ;i<= maxWeight;i++){
+          if( weight[0] <= i  )
+              dp[0][i] = value[0];
+        }
+        
+        int n = index + 1;
+        for(int row = 1 ;row < n;row ++){
+            for(int w = 1; w <= maxWeight;w++){
+                int inclusive = 0;
+                if(weight[row] <= w )
+                    inclusive = value[row] + dp[row-1][w-weight[row]];
+                int exclusive = 0 + dp[row-1][w];
+                    dp[row][w] = max(inclusive,exclusive); 
+            }
+        }
+        return dp[n-1][maxWeight];
+        
+    }
+    
     int knapSack(int W, int wt[], int val[], int n) 
     { 
         int index = n - 1;
@@ -64,9 +90,16 @@ class Solution
         // // Recursion
         // int ans = MaximumTotalValueRecursion(wt,val,W,index);
         
-        //Recursion + Memoization
-        vector<vector<int>>dp(n + 1 , vector<int>(W+1 ,-1));
-        int ans = MaximumTotalValueMemo(wt,val,W,index,dp);
+        //vRecursion + Memoization
+        // vector<vector<int>>dp(n + 1 , vector<int>(W+1 ,-1));
+        // int ans = MaximumTotalValueMemo(wt,val,W,index,dp);
+        
+        // Tabulation
+        
+        int ans = MaximumTotalValueTabulation(wt,val,W,index);
+        
+        
+        
         
         return ans;
     }
