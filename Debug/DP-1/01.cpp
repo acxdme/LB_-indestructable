@@ -1,4 +1,4 @@
-/ counting stairs debugging
+// counting stairs debugging
 #include <iostream>
 using namespace std;
 
