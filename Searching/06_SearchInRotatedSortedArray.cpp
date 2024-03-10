@@ -1,5 +1,5 @@
 // Method-1
-// a)Find the pivot element (max wala)
+// a)Find the pivot element (max wala) {Pivot element is the element at which the monotonic order breaks}
 // b) apply binary search on the subarray for which the target lies in the range of subarray.
 
 
