@@ -17,3 +17,38 @@ public:
         
     }
 };
+
+//----------------------------------------------------------------------------------------
+// Variation question : Save Your Life
+// GFG
+ string maxSum(string w,char x[], int b[],int n){
+            // map for redefined values
+            unordered_map<char,int> mp;
+            for(int i =0 ; i< n;i++){
+                mp[x[i]] = b[i];
+            }
+            
+            int localSum = 0;
+            int globalSum = INT_MIN;
+            int start = 0 , end = 0 , ptr = 0;
+            for(int i =0 ; i< w.size() ; i++){
+                int currentVal = (int) w[i];
+                if(mp.find(w[i]) != mp.end()){
+                    currentVal = mp[w[i]];
+                }
+                
+                localSum += currentVal;
+                if(localSum > globalSum){
+                    globalSum = localSum;
+                    start = ptr;
+                    end = i;
+                    
+                }
+                if(localSum < 0 ){
+                    localSum = 0;
+                    ptr = i+1;
+                }
+            }
+            
+            return w.substr(start,end-start +1);
+      }
