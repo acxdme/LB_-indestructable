@@ -20,7 +20,7 @@ public:
 
 //----------------------------------------------------------------------------------------
 // Variation question : Save Your Life
-// GFG
+// GFG : https://www.geeksforgeeks.org/problems/save-your-life4601/1
  string maxSum(string w,char x[], int b[],int n){
             // map for redefined values
             unordered_map<char,int> mp;
