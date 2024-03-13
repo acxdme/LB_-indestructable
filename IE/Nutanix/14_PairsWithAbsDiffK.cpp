@@ -17,3 +17,30 @@ public:
         return count;
     }
 };
+
+//-------------------------------------------------------------
+//More time optimal solution 
+// tc : O(N)
+// sc : O(N)
+
+class Solution {
+public:
+    int countKDifference(vector<int>& nums, int k) {
+        int count = 0;
+        unordered_map<int, int>
+            frequencies; // Hash table to store element frequencies
+
+        for (int num : nums) {
+            // Check for (num + k) as a potential pair
+            count += frequencies[num + k];
+
+            // Check for (num - k) as a potential pair
+            count += frequencies[num - k];
+
+            // Update the frequency of the current element
+            frequencies[num]++;
+        }
+
+        return count;
+    }
+};
