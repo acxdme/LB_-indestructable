@@ -1,7 +1,6 @@
 // Reverse a singly linked-list
 // tc : O(N)
 // sc : O(1)
-
 #include <iostream>
 using namespace std;
 
@@ -17,6 +16,8 @@ public:
 };
 
 Node* reverseLL(Node* head){
+
+  if(head == NULL || head->next == NULL) return head;
   Node* prev = NULL;
   Node* curr = head;
   Node* forward = curr->next;
@@ -44,10 +45,10 @@ int main() {
   Node *head = new Node(10);
   Node *first = new Node(20);
   Node *second = new Node(30);
-  Node *third = new Node(40);
+  // Node *third = new Node(40);
   head->next = first;
   first->next = second;
-  second->next = third;
+  // second->next = third;
 
   printLL(head);
 
