@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-    int getMinNumbers(int n) {
+    int getMinNumbers(int n) { // exponential time complexity
         if (n <= 0) {
             return 0;
         }
