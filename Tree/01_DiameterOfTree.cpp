@@ -33,3 +33,35 @@ public:
  
     }
 };
+-------------------------------------------------------------------------------------------------------------
+    Method-2 Fast way to find diameter of a tree
+ TC : O(N)
+ SC : O(log N)
+
+class Solution {
+public:
+    int D = 0;
+    int getDiameter(TreeNode* root){
+        if(root == NULL){
+            return 0;
+        }
+
+        int left = getDiameter(root->left);
+        int right = getDiameter(root->right);
+
+        int curD = left + right;
+        D = max (D,curD);
+
+        return  1 + max(left , right) ;
+
+    }
+    int diameterOfBinaryTree(TreeNode* root) {
+
+        if(root == NULL) return 0;
+        int ans = getDiameter(root);
+
+        return D;
+        
+    }
+};
+
