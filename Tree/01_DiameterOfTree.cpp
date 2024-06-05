@@ -33,13 +33,14 @@ public:
  
     }
 };
--------------------------------------------------------------------------------------------------------------
-    Method-2 Fast way to find diameter of a tree
+//-------------------------------------------------------------------------------------------------------------
+ Method-2 Fast way to find diameter of a tree
  TC : O(N)
  SC : O(log N)
 
 class Solution {
 public:
+   // global variable for Diameter(D)
     int D = 0;
     int getDiameter(TreeNode* root){
         if(root == NULL){
