@@ -1,5 +1,5 @@
 TC : O(N)
-SC : O(log(N))
+SC : O(h) , where h is the height of the binary tree.
 lc - 951 : https://leetcode.com/problems/flip-equivalent-binary-trees/
 
 class Solution {
