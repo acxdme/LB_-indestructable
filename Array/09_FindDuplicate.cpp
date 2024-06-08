@@ -20,8 +20,9 @@ public:
 };
 
 // ---------------------------------------------------------
-// Another approach  
+// Another approach (but still we are modifying the array.)
 // TC : O(N) , SC : O(1)
+// further reading : https://takeuforward.org/data-structure/find-the-duplicate-in-an-array-of-n1-integers/
 
 class Solution {
 public:
@@ -39,7 +40,10 @@ public:
         }
         // todo : remove pending negative sign
 
-        return -1;
-        
+        return -1;   
     }
 };
+
+//-----------------------------------------------------------------
+
+
