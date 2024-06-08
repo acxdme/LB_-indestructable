@@ -1,6 +1,6 @@
 // Time complexity : O(N)
 // space complexity : O(1)
-// lc-442
+// lc-287
 
 class Solution {
 public:
