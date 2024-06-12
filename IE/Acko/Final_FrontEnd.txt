@@ -1,0 +1,7 @@
+// html
+
+// css
+
+// js
+EventLoop
+setTimeout,callback and promise execution priority.
