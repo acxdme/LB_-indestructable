@@ -1,10 +1,16 @@
 // html
+1) list some html5 tags
+2) What is the difference between svg & canvas tag
 
 // css
+1) What is the difference between Inline and block elements.
+2) What is the difference between display:none , visibility:hidden and opacity:0
 
 // js
-EventLoop
-setTimeout,callback and promise execution priority
+1) EventLoop explaination
+2) setTimeout,callback and promise execution priority
+3) Question around critical rendering path (CRP)
+
 
 // general frontEnd
 Q) Journey of a server side rendered webpage.
