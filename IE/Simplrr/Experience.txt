@@ -1,1 +1,3 @@
 Round-1
+// FrontEnd Challenges Discussion
+// given pokemon api , render a table of pokemon & it's ability . Note : Write production ready code.
