@@ -1,6 +1,6 @@
 // tc : O(N)
 // sc : O(N)
-// lc-448
+// lc-443
 
 class Solution {
 public:
@@ -58,4 +58,52 @@ public:
         return s.size();
         
     }
+
+
+
+//-------------------------------------------------------------------------------------------------------
+// String compression cleaner approach : 
+
+class Solution {
+public:
+    int compress(vector<char>& chars) {
+
+        char currentChar = chars[0];
+        int count = 1;
+
+        vector<char> result;
+
+        for (int i = 1; i < chars.size(); i++) {
+            if (chars[i] == currentChar) {
+                count++;
+            } else {
+                result.push_back(currentChar);
+                if (count > 1) {
+                    string value = to_string(count);
+                    for (auto c : value) {
+                        result.push_back(c);
+                    }
+                }
+                currentChar = chars[i];
+                count = 1;
+            }
+        }
+        result.push_back(currentChar);
+        if (count > 1) {
+            string value = to_string(count);
+            for (auto c : value) {
+                result.push_back(c);
+            }
+        }
+
+        // for (auto ch : result) {
+        //     cout << ch << " ";
+        // }
+        // cout << endl;
+
+        chars = result;
+
+        return result.size();
+    }
+};
 };
