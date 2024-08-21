@@ -18,3 +18,5 @@
 17) ZigZag Conversion
 18) Largest Number
 19) Help Ramu
+20) Integer to Roman
+21) Valid compression String
