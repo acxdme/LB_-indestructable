@@ -58,3 +58,33 @@ class Solution
         
     }
 };
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// using pair<int,pair<int,int>> to manage the <value,<row,column>> data
+
+    vector<int> mergeKArrays(vector<vector<int>> arr, int K)
+    {
+        vector<int> result;
+        // pair<int,pair<int,int>> = <value,<row,col>>
+        priority_queue< pair<int,pair<int,int>>,vector< pair<int,pair<int,int>>>,greater< pair<int,pair<int,int>>>> minHeap;
+        
+        for(int r =0; r < K ; r++){
+            minHeap.push({arr[r][0] , {r,0}});
+        }
+        
+        while(!minHeap.empty()){
+            auto top = minHeap.top();
+            auto val = top.first;
+            auto row = top.second.first;
+            auto col = top.second.second;
+            minHeap.pop();
+            result.push_back(val);
+            if(col + 1 < K)
+             minHeap.push({arr[row][col + 1],{row,col+1}});
+            
+        }
+        
+        return result;
+        
+    }
