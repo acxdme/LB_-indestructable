@@ -1,0 +1,16 @@
+// Js Question
+Q1) Write the code for GroupBy
+Q2) Identify the time complexity and how it can be optimized. (given a function with 3 seperate filter method)
+Q3) Export function mutation : Redux toolkit , In Redux this will not work
+// Front-End Questions
+Q1) Question on Docker and Kubernetes, What is kubernets
+Q2) Parity hook in React.Custom hook
+Q3) Question on Jest & RTL.How to test API.
+Q4) How to package a React Reusable component.Publish a pakage.
+Q5) Given a project , how will I code.
+Q6) Question on redux-toolkit and where is the business logic written.
+Ans-6) In a React with Redux application, the business logic is typically written in Redux action creators, reducers, and middleware
+       Action creators handle user interactions and dispatch actions, reducers update the state based on these actions,
+       and middleware (like redux-thunk or redux-saga)
+       can be used for handling side effects such as API calls or asynchronous logic. This separation keeps the business logic
+       centralized and maintains the presentation logic within the React components.
