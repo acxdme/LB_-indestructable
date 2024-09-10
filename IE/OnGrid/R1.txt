@@ -1,0 +1,83 @@
+// JavaScript
+Q1) Currying in js , write sum function in currying 
+Q2) Recursive currying function for sum
+Q3) Output questions based hoisting , var keyword based.
+Q4) Explain Closure in js , based on how recursive currying code.
+Q5) Output of the below code plus variations
+var a = 4;
+function greet() {
+    a = 'hello';
+    console.log(a); 
+    var b;
+}
+greet(); 
+console.log(a);
+Q6) Create this function the sendRequest method using the concept of curring and ES6 syntax.
+  console.log(sendRequest('Hello')('John')('Please can you add me to your Linkedin network?'));
+Q7) What will be the output of checkFun2
+function checkFun2(a, b, c){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+checkFun2.apply(1,[2,3,4]);
+Q8) Write the code to console the number after 1 second each.  
+  for(let i =1 ; i <= 4 ; i++){
+    setTimeout(() => {console.log(i)},i*1000); 
+  }
+Q9) Rectify this function , give the output
+  let func2 = function() {
+    console.log("Example 1:", this)
+}.bind(1);
+ 
+ let obj = {
+    callFun : func2
+ }
+
+obj.callFun();
+Q10) What is Prototype and Primitive value in js!
+Q11) What are the call,apply and bind methods in js?
+
+// Design Pagination
+
+// fetch api -> 100 Array of objects (first 10)
+// hooks
+
+// const [data,setData] =  useState([]); // 100
+// const [pageNo, setPageNo] = useState(1);
+// const [pageSize ,setPageSize] = useState(10);
+
+// const fetchData = async() =>{
+//   try{
+//     const res = await fetch("api/call");
+//     const data = await res.json();
+//     setData(data;
+    
+//   }catch(err){
+//     console.log("unable to fetch data",err);
+//   }
+  
+// }
+
+// const chunkData = () =>{
+//   const start = (pageNo -1) * pageSize;
+//   const end = start + pageSize;
+//   setDisplayData(data.slice(start,end));
+// }
+
+// useEffect(()=>{
+  
+//   fetchData();
+  
+// },[])
+
+// const handlePageChange = (newPage) =>{
+//   if(newPage > 0){
+//     setPageNo(newPage);
+//   }
+// }
+
+
+///  Visual UI:       <prev  1,2,3 next>
+
+
