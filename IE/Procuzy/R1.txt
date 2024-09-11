@@ -35,3 +35,8 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
  console.log("result is",res);
 
 Q) Question on webpack, docker, kubernetes, MicroFrontend architecture, Babel.
+Q) Web Securities and vulnerabilities.
+Q) Which is better CSR and SSR.[Real-time examples]
+Q) Where should be put the authentication token , (cookies, session ,localStorage);
+Q) this is javascript!
+Q) Prototype and Prototypal inheritance
