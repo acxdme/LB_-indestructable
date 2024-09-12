@@ -1,1 +1,2 @@
-
+// CV Grill Project - MFE & Plotly.js Migration
+// MFE Design for Flipkart component Page , API calls and api response json data for images
