@@ -1,0 +1,37 @@
+// What happens on the onClick event
+// shrey choudary
+const  createSadDivAfter5Seconds = ()=> {
+    setTimeout(()=>{
+
+        Const sadDiv = document.createElement(“div”);
+
+        Const myHappyDiv = document.getElementById(“MyHappyDiv”); // this will search in document by a query by id. return type will be: HTMLDivElement node.
+
+        // apply some styling to the sadDiv. Width and height colors etc and a sad emoji.
+         sadDiv.style.color="red"; // node it is not yet attached to DOM, have access to style property, color value is . can assign any other property like width and height. Upto this point i have not attached so it'll ntot be visile. only be in memory. 
+
+        myHappyDiv.appendChild(sadDiv); // a child will be appended.
+
+    },5000)
+}
+
+
+<div  id=”MyHappyDiv” onclick=”createSadDivAfter5Seconds()”> // clicked on this
+
+
+js runtime, eventloop, 
+
+settimeout, callback queue.
+
+event propogation happens: default is bubbling, by default inner to outer.
+memory creation, memory execution.
+variables and fns var is hoisted above, fn declrataion is hoisted above. memory is assinged. temporal dead zone, anything with const and let, if you try to access it'll give a reference error. 
+setimout is a webapi, which has a callback, and it has a delay in ms. 
+It'll come to the stack, will delegate to webbrowser api.
+directly reference the dom. vanilajs, nothing of react. 
+
+DOM is a web API, provided by browser. task is delegated to browser api. in browser v8 engine has access to DOM. after appneding,do the process. if the layout has changed, (height and width) it'll cause a layout change of the entire page. heavy recomputation for the browser, CSSOM will also change, and style changes in repaint process.
+pixel by pixel. 
+
+
+
