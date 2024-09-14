@@ -1,5 +1,9 @@
 // What happens on the onClick event
 // shrey choudary
+
+//challenges (plotly.js , authentication)
+// class in js , OOPS
+//
 const  createSadDivAfter5Seconds = ()=> {
     setTimeout(()=>{
 
@@ -32,6 +36,121 @@ directly reference the dom. vanilajs, nothing of react.
 
 DOM is a web API, provided by browser. task is delegated to browser api. in browser v8 engine has access to DOM. after appneding,do the process. if the layout has changed, (height and width) it'll cause a layout change of the entire page. heavy recomputation for the browser, CSSOM will also change, and style changes in repaint process.
 pixel by pixel. 
+
+
+Q1)
+OOJS?
+
+class Person // 2016. "class" didn't exist
+{
+
+  constructor(name){
+      this.name = name
+  }
+}
+
+
+const person = new Person("Ayush"); // this has been a valid statement since the beginning of JS
+
+function Person (name){
+    this.name = name; // what happens here if i don't call it with "new". what's the value of "this"..? Global context. Window object
+}
+
+function Employee(name,id){
+   Person.call(this,name); //super
+   
+   this.id = id;
+  
+}
+
+const p1 = new Person("Ac");
+Person("shrey"); // 
+
+class Employee extends Person { 
+  constructor(name,id) {
+    super(name);
+    this.id = id;
+  }
+  
+}
+
+Q2)
+CSS
+
+z-index?
+
+
+<div z={1} name={"A"}>
+  
+        <div z={2} name={"B"}> 
+    
+                <div z={1} name={"C"}>
+                </div>
+        
+                <div z={5} name={"D"}> 
+                </div>
+    
+        </div>
+
+        <div z={3} name={"E"}> // higher
+    
+                <div z={2} name={"F"}> 
+                </div>
+        
+                <div z={5} name={"G"}> // 1 -> 3 
+                </div>
+    
+        </div>
+  
+</div>
+
+G>F>E>D>C>B>A
+
+all the divs are position: fixed, left: 0, top:0, width: 100, height: 100.
+Q3)
+const LeftArrowButton = ({playerControls}) => {
+
+const moveLeft = ()=> {
+   playerControls.position.x - - ; // let’s assume this works. This will move player by 1px.
+}
+
+const returnedItems = useLongPress({callback:  moveLeft, speed: SpeedOfInvocationOfTheCallback}); 100ms
+
+return <div onClick={moveLeft}>Left Arrow </div>
+}
+
+
+const useLongPress= ({callback,speed})=> {
+
+const [isPressing, setIsPressing] = useState(false); // depicts pressing
+
+// handleMousedown
+const handleMouseDown = () => {setIsPressing(true)}
+const handleMouseUp = () =>{setIsPressing(false}
+
+useEffect(()=>{
+let t;
+if(isPressing){
+    t = setInterval(callback,speed);
+}else{
+  clearInterval(t);
+}
+
+//cleanup function
+ return () => clearInterval(t);
+
+},[isPressing,speed,callback]);
+
+
+return {
+onMouseUp : handleMouseUp
+onMouseDown : handleMouseDown
+}
+
+}
+
+
+
 
 
 
