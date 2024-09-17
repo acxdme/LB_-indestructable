@@ -1,0 +1,5 @@
+// Intro
+// Team Structuring related discussion
+// Challenging work - Plotly.js migration and performace matrix
+
+// Pagination Machine coding.
