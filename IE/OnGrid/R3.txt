@@ -1,0 +1,6 @@
+// CTO round
+// CV questions
+// Project Backend
+// Frontend architecuture of projects
+// Local vs Session vs Cookies
+// Web security vulnerabilities.
