@@ -1,0 +1,62 @@
+// js round
+HTML JS
+
+Todo List Application
+
+	Input section
+		Input Box - Submit
+
+	Todo List
+		Item1 - Delete
+		Item2 - Delete
+		…
+
+
+https://jsfiddle.net/8u97cgvk/
+
+
+custom memoization
+Given the following example function add:
+
+function add(a, b) {
+  return a + b;
+}
+const memoizedAdd = memo(add);
+console.log(memoizedAdd(1, 2)); // Output: 3, computed
+console.log(memoizedAdd(1, 2)); // Output: 3, from cache
+console.log(memoizedAdd(2, 3)); // Output: 5, computed
+console.log(memoizedAdd(1, 2)); // Output: 3, from cache
+
+
+https://leetcode.com/playground/gYLC377H
+
+/**
+Given the following example function add:
+**/
+function add(a, b) {
+  return a + b;
+}
+const memoizedAdd = memo(add);
+console.log(memoizedAdd(1, 2)); // Output: 3, computed
+console.log(memoizedAdd(1, 2)); // Output: 3, from cache
+console.log(memoizedAdd(2, 3)); // Output: 5, computed
+console.log(memoizedAdd(1, 2)); // Output: 3, from cache
+
+
+
+function memo(fn){
+    const cache = new Map(); // <key,value>
+    return function(...args){
+        const key = JSON.stringify(args);
+        if(cache.has(key))// key exists
+            {
+                console.log("cached result : ");
+                return cache.get(key);
+            }
+        const result = fn.apply(this,args);
+        cache.set(key,result);
+        return result;
+        
+    }
+}
+
